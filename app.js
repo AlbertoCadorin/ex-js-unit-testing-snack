@@ -3,10 +3,11 @@ function getInitials(fullName) {
     const [nome, cognome] = fullName.split(" ");
     return `${nome.charAt(0)}.${cognome.charAt(0)}.`
 }
-// snack 2 converte la parola in minuscolo 
+// snack 2 converte la parola in minuscolo  snack 4 sostituisce glii spazzi con "-"
 function createSlug(word) {
     const wordLower = word.toLowerCase()
-    return (wordLower)
+    const dashes = wordLower.replaceAll(" ", '-')
+    return (dashes)
 }
 //  snack  3 average calcoa la media 
 function average(num) {

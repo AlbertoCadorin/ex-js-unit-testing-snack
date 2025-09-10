@@ -19,3 +19,8 @@ test("La funzione average calcola la media aritmetica di un array di numeri.", (
     expect(average([5, 15, 20, 40, 30])).toBe(22)
 })
 
+// snack 4 
+
+test("La funzione createSlug sostituisce gli spazi con -.", () => {
+    expect(createSlug("titolo di un libro")).toBe("titolo-di-un-libro")
+})
