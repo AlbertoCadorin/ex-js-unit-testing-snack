@@ -4,8 +4,12 @@ function getInitials(fullName) {
     const [nome, cognome] = nameUp.split(" ");
     return `${nome.charAt(0)}.${cognome.charAt(0)}.`
 }
-// snack 2 converte la parola in minuscolo  snack 4 sostituisce glii spazzi con "-"
+// snack 2 converte la parola in minuscolo,  snack 4 sostituisce glii spazzi con "-",  snack 6 
 function createSlug(word) {
+    if (!word) {
+        throw new Error("titolo assente");
+
+    }
     const wordLower = word.toLowerCase()
     const dashes = wordLower.replaceAll(" ", '-')
     return (dashes)
