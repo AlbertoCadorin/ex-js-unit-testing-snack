@@ -27,11 +27,16 @@ function isPalindrome(str) {
     return strLower === palintrome
 }
 
+function findPostById(post, id) {
+    return post.find(p => p.id === id)
+}
+
 
 
 module.exports = {
     getInitials,
     createSlug,
     average,
-    isPalindrome
+    isPalindrome,
+    findPostById
 }

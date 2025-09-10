@@ -1,4 +1,4 @@
-const { getInitials, createSlug, average, isPalindrome } = require("./app");
+const { getInitials, createSlug, average, isPalindrome, findPostById } = require("./app");
 
 //  snack 1 
 test("La funzione getInitials restituisce le iniziali di un nome completo.", () => {
@@ -34,4 +34,15 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
 test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
     expect(() => createSlug("")).toThrow(Error)
     expect(() => createSlug(null)).toThrow(Error)
+})
+
+const post = [
+    { id: 1, titolo: 'la nazionale italiana', slug: 'la-nazionale-italiana' },
+    { id: 2, titolo: 'Il mistero della calza spaiata', slug: 'Il-mistero-della-calza-spaiata' },
+    { id: 3, titolo: 'snack unit testing', slug: 'snack-unit-testing' }
+]
+
+
+test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id", () => {
+    expect(findPostById(post, 3)).toEqual({ id: 3, titolo: 'snack unit testing', slug: 'snack-unit-testing' })
 })
